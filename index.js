@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3040;
 const corsoptions =[
     'http://127.0.0.1:5500/'
 ]
-const serviceAccount = require('./auth.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
