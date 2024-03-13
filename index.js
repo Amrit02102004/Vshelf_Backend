@@ -15,6 +15,9 @@ app.use(cors(corsoptions));
 const db = admin.firestore();
 
 app.use(bodyParser.json());
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
 
 app.post('/register', async (req, res) => {
   try {
@@ -63,6 +66,4 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+module.exports = app;
